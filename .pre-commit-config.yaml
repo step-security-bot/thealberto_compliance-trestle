@@ -3,6 +3,8 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0  # Use the ref you want to point at
     hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
       - id: check-merge-conflict
       - id: check-yaml
         exclude: "tests/data/yaml/bad_simple.yaml"
@@ -80,3 +82,19 @@ repos:
       - mdformat-frontmatter
       - mdformat-gfm
 
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.16.3
+    hooks:
+      - id: gitleaks
+  - repo: https://github.com/jumanjihouse/pre-commit-hooks
+    rev: 3.0.0
+    hooks:
+      - id: shellcheck
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v8.38.0
+    hooks:
+      - id: eslint
+  - repo: https://github.com/pylint-dev/pylint
+    rev: v2.17.2
+    hooks:
+      - id: pylint
